@@ -14,7 +14,7 @@ from Features import GetNumberOfTimes, GetNumberOfAddresses, GetPresenceOfDays, 
 from MeetingInformationExtractionFunctions import GetMeetingTime, GetMeetingAddress,GetMeetingDay,RemoveHTMLTags
 from TreeFunctions import readPageInString, traverse, traversePrint, SetSubtrees, FindDuplicates, FindTags
 
-browser = webdriver.Chrome()
+browser = webdriver.Chrome("/home/ugrad00/wang3570/aa-database-builder/PatternDetection 8 November/chromedriver")
 connection=InitDatabase()
 #the file o write number of meetings found and expected number of meetings
 meetingrecordcsv = open("mrecord.csv", 'wt')
