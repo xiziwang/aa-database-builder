@@ -14,6 +14,12 @@ from Features import GetNumberOfTimes, GetNumberOfAddresses, GetPresenceOfDays, 
 from MeetingInformationExtractionFunctions import GetMeetingTime, GetMeetingAddress,GetMeetingDay,RemoveHTMLTags
 from TreeFunctions import readPageInString, traverse, traversePrint, SetSubtrees, FindDuplicates, FindTags
 
+
+import logging
+logging.basicConfig(filename='error_log.log',level=logging.DEBUG)
+logging.info('---- Start Logging ----')
+
+
 browser = webdriver.PhantomJS(executable_path='./phantomjs-2.1.1-linux-x86_64/bin/phantomjs', service_log_path = 'ghostdriver.log')
 connection=InitDatabase()
 #the file o write number of meetings found and expected number of meetings
@@ -22,6 +28,7 @@ writer = csv.writer(meetingrecordcsv)
 try:
     writer.writerow( ('URL', 'Meetings found', 'Expected Meetings') )
 finally:
+    logging.error('Mainfile - failed to write rows')
     print "exception"
 
 txt=""
@@ -62,8 +69,8 @@ def CheckNotSubset(ptn):
 	for onepattern in alreadyMeetingsIndices:
 		if ptn.start>=onepattern.start and ptn.end<=onepattern.end:
 			return 0
-	
 	return 1
+
 '''def FindInfoInParents(cNode,tillindex):
 	parent=cNode.parent
 	found=0
