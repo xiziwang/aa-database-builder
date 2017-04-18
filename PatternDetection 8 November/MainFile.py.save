@@ -1,3 +1,4 @@
+
 from bs4 import BeautifulSoup
 import codecs, collections, csv, string, sys, time
 from selenium import webdriver
@@ -14,7 +15,7 @@ from Features import GetNumberOfTimes, GetNumberOfAddresses, GetPresenceOfDays, 
 from MeetingInformationExtractionFunctions import GetMeetingTime, GetMeetingAddress,GetMeetingDay,RemoveHTMLTags
 from TreeFunctions import readPageInString, traverse, traversePrint, SetSubtrees, FindDuplicates, FindTags
 
-browser = webdriver.PhantomJS(executable_path='./phantomjs-2.1.1-linux-x86_64/bin/phantomjs', service_log_path = 'ghostdriver.log')
+browser = webdriver.Chrome("chromedriver")
 connection=InitDatabase()
 #the file o write number of meetings found and expected number of meetings
 meetingrecordcsv = open("mrecord.csv", 'wt')

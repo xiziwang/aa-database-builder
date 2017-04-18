@@ -2,7 +2,7 @@ import MySQLdb, csv, sys
 from Classes import MeetingInfo,Position
 
 def InitDatabase():
-	conn = MySQLdb.connect (host = "localhost",user = "root", passwd = "",db = "AAMeetings",charset='utf8')
+	conn = MySQLdb.connect (host = "localhost",user = "root", passwd = "br4cruta",db = "AAmeetings",charset='utf8')
 	return conn
 
 def InsertMeeting(conn,OneMeeting):
