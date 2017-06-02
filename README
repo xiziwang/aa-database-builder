@@ -1,0 +1,19 @@
+README FILE (June 1, 2017)
+
+------ TODOs ------
+use urlparse to simplify ExtractDataFromGoogleCalendar.py
+
+
+------ Introduction of The Python Files ------
+
+-> METHOD 1 (Google Calendar API)
+
+google_calendar.py - creat a service object that interact with the Google Calendar API
+
+GetEventsInJSON.py - use google_calendar.py to print a list of meeting info in JSON using Google Calendar API
+
+(to install the google calendar API, please follow this website https://developers.google.com/google-apps/calendar/quickstart/python)
+
+-> METHOD 2 (use Selenium)
+
+ExtractDataFromGoogleCalendar.py - use selenium to search for and visit possible google calendar webs and extract meeting infomation from these webs.
